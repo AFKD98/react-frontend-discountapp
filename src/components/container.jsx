@@ -24,7 +24,7 @@ function Container() {
   return (
     // <Wrapper>
     <Switch>
-      <Route exact path="/" component={HomeView} />
+      <Route exact path="/" component={login} />
       <Route path="/recommendation/:type/:level" component={Recommendation} />
       <Route path="/CategoryPage" component={Categories} />
       <Route path="/profile/:id" component={Profile} />
@@ -38,7 +38,7 @@ function Container() {
       />
       {/* <Route path="/adminPortal" component={admin} /> */}
       <Route path="/bookings" component={Table} />
-      <Route path="/login" component={login} />
+      <Route path="/home" component={HomeView} />
       <Route path="/signup" component={signup} />
       <Route path="/registrations" component={registrations} />
       <Route path="/myphotographers" component={myphotographers} />

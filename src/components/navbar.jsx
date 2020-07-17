@@ -21,14 +21,19 @@ class NavBar extends Component {
     const guestLinks = (
       <React.Fragment>
         <Navbar collapseOnSelect expand="md" bg="light" variant="light">
-          <Navbar.Brand href="/">SmartLens</Navbar.Brand>
+          <Navbar.Brand exact href="/">
+            Himaaus
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
               <Nav.Link href="/photoreg">Register</Nav.Link>
               <Nav.Link href="/vision">Vision</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
-              <Nav.Link href="/login">Sign In</Nav.Link>
+              <Nav.Link exact href="/">
+                Sign In
+              </Nav.Link>
+              <Nav.Link href="/signup">Create Account</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -38,15 +43,18 @@ class NavBar extends Component {
     const authLinks = (
       <React.Fragment>
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-          <Navbar.Brand href="/">SmartLens</Navbar.Brand>
+          <Navbar.Brand exact href="/">
+            Himaaus
+          </Navbar.Brand>
+
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
+              <Nav.Link href="/home">Home</Nav.Link>
               <Nav.Link href="/bookings">Bookings</Nav.Link>
               <Nav.Link href="/registrations">Registrations</Nav.Link>
               <Nav.Link href="/myphotographers">Photographers</Nav.Link>
-              <Nav.Link href="/signup">Create Account</Nav.Link>
-              <Nav.Link href="/adminPortal" onClick={this.props.logout}>
+              <Nav.Link exact href="/" onClick={this.props.logout}>
                 Log out
               </Nav.Link>
             </Nav>

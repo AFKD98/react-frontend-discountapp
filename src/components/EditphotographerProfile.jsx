@@ -9,8 +9,6 @@ import HomePhoto3 from "../assets/homephoto3.jpg";
 import Form from "react-bootstrap/Form";
 import { Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import { validateUrl } from "youtube-validate";
-import { validateVideoID } from "youtube-validate";
 
 class Profile extends Component {
   constructor(props) {
