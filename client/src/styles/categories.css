@@ -1,0 +1,24 @@
+.jumbotron.cats {
+    background-image: url("../assets/sideview.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.jumbotron .container.cont .conte {
+    position: relative;
+    text-align: center;
+    bottom: -20px;
+}
+
+.catlist {
+    position: relative;
+    text-align: center;
+    top: -20px;
+    margin-right: 40px;
+
+}
+
