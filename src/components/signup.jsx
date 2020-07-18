@@ -4,6 +4,8 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
+import Backdrop from "@material-ui/core/Backdrop";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -25,6 +27,13 @@ const useStyles = (theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 5),
+    background: "linear-gradient(45deg, #8300FF 30%, #48C9B0 90%)",
+    border: 0,
+    borderRadius: 3,
+    boxShadow: "0 3px 5px 2px rgba(100, 200, 250, 1)",
+    color: "white",
+    height: 48,
+    padding: "0 30px",
   },
 });
 
@@ -51,6 +60,9 @@ class SignUp extends Component {
       CoverPic: "",
       msg: null,
     };
+    this.handleClose = this.handleClose.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
   async componentDidMount() {
     await this.props.loadUser();
@@ -62,7 +74,20 @@ class SignUp extends Component {
     addPhotographer: PropTypes.func.isRequired,
     clearErrors: PropTypes.func.isRequired,
   };
-
+  setOpen = (val) => {
+    this.setState({ open: val });
+  };
+  handleClose = () => {
+    {
+      this.setOpen(false);
+      this.props.logout();
+    }
+  };
+  handleToggle = () => {
+    {
+      this.setOpen(!this.state.open);
+    }
+  };
   componentDidUpdate(prevProps) {
     const { error } = this.props;
     if (error !== prevProps.error) {
@@ -105,6 +130,7 @@ class SignUp extends Component {
     };
 
     //attempt to register
+    this.handleToggle();
     this.props.addPhotographer(newLad);
 
     // // close modal
@@ -258,6 +284,13 @@ class SignUp extends Component {
             >
               Create account
             </Button>
+            <Backdrop
+              className={classes.backdrop}
+              open={this.state.open}
+              onClick={this.handleClose}
+            >
+              <CircularProgress color="inherit" />
+            </Backdrop>
           </form>
         </React.Fragment>
       </Container>
