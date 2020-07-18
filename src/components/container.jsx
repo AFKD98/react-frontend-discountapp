@@ -18,6 +18,7 @@ import signup from "./signup";
 import registrations from "./photographerRegistrationDetails";
 import myphotographers from "./myphotographers";
 import photographerlogin from "./login_photo";
+import HomePage from "./homePage";
 import admin from "./adminPortal";
 
 function Container() {
@@ -32,6 +33,8 @@ function Container() {
       <Route path="/editprofile/:id" component={EditProfile} />
       <Route path="/vision" component={Vision} />
       <Route path="/about" component={About} />
+      <Route path="/homePage" component={HomePage} />
+
       <Route
         path="/photographersSelection/:id"
         component={PhotographerSelection}

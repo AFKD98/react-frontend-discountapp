@@ -15,36 +15,43 @@ import { Redirect } from "react-router-dom";
 import Alert from "@material-ui/lab/Alert";
 import HomePhoto from "../assets/discount.jpg";
 const useStyles = (theme) => ({
-  "@global": {
-    body: {
-      backgroundImage: "url(" + HomePhoto + ")",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "center center",
-      backgroundSize: "cover",
-      backgroundAttachment: "fixed",
-      height: "100%",
-    },
-  },
+  // "@global": {
+  //   body: {
+  //     // backgroundImage: "url(" + HomePhoto + ")",
+  //     backgroundRepeat: "no-repeat",
+  //     backgroundPosition: "center center",
+  //     backgroundSize: "cover",
+  //     backgroundAttachment: "fixed",
+  //     height: "100%",
+  //     backgroundColor: "#066878",
+  //   },
+  // },
   paper: {
-    marginTop: theme.spacing(20),
-    marginBottom: theme.spacing(30),
+    marginTop: theme.spacing(8),
+    marginBottom: theme.spacing(5),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "white",
-    backgroundSize: "cover",
-    height: "100%",
+
+    // backgroundColor: "white",
+    // backgroundSize: "cover",
+    // height: "100%",
   },
   form: {
     width: "100%",
     marginTop: theme.spacing(1),
   },
+  rememberme: {
+    width: "100%",
+    marginTop: theme.spacing(1),
+    color: "black",
+  },
   submit: {
     margin: theme.spacing(3, 0, 5),
-    background: "linear-gradient(45deg, #8300FF 30%, #48C9B0 90%)",
+    background: "linear-gradient(45deg, #1DA8DD 30%, #0779B9 90%)",
     border: 0,
     borderRadius: 3,
-    boxShadow: "0 3px 5px 2px rgba(100, 200, 250, 1)",
+    // boxShadow: "0 3px 5px 2px rgba(100, 200, 250, 1)",
     color: "white",
     height: 48,
     padding: "0 30px",
@@ -125,10 +132,13 @@ class LoginPage extends Component {
         {this.props.isAuthenticated && this.state.open ? (
           <Redirect to="/bookings" />
         ) : null}
-
         <Typography component="h1" variant="h4">
+          Himaaus Advantage
+        </Typography>
+        <Typography component="h1" variant="h5" className="mt-3 ">
           Sign in
         </Typography>
+
         <form onSubmit={this.onSubmit} className={classes.form}>
           <TextField
             variant="outlined"
@@ -155,7 +165,8 @@ class LoginPage extends Component {
             onChange={this.onChange}
           />
           <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
+            className={classes.rememberme}
+            control={<Checkbox value="remember" color="#1DA8DD" />}
             label="Remember me"
           />
           {this.state.msg ? (

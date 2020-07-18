@@ -13,10 +13,10 @@ class App extends Component {
       <Provider store={store}>
         <React.Fragment>
           <Router>
+            <NavBar />
             <div>
-              <NavBar />
               <Container />
-              <Footer />
+              {/* <Footer /> */}
             </div>
           </Router>
         </React.Fragment>
